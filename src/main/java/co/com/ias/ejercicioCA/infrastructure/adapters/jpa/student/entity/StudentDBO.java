@@ -5,10 +5,9 @@ import co.com.ias.ejercicioCA.domain.model.student.attributes.StudentId;
 import co.com.ias.ejercicioCA.domain.model.student.attributes.StudentMail;
 import co.com.ias.ejercicioCA.domain.model.student.attributes.StudentName;
 import co.com.ias.ejercicioCA.domain.model.student.attributes.StudentPhone;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import co.com.ias.ejercicioCA.infrastructure.adapters.jpa.course.dbo.CourseDBO;
+import com.sun.istack.NotNull;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -22,9 +21,21 @@ public class StudentDBO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
     private Integer phone;
     private String mail;
+
+    @ManyToOne
+    @JoinColumn(name = "course", referencedColumnName = "id")
+    private CourseDBO courseDBO;
+
+    public StudentDBO(Long id, String name, Integer phone, String mail) {
+        this.id = id;
+        this.name = name;
+        this.phone = phone;
+        this.mail = mail;
+    }
 
     public StudentDBO fromDomain (Student student) {
         return new StudentDBO(

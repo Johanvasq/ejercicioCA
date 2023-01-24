@@ -14,6 +14,10 @@ public class CourseDTO {
         this.name = name;
     }
 
+    public CourseDTO() {
+
+    }
+
     public Long getId() {
         return id;
     }

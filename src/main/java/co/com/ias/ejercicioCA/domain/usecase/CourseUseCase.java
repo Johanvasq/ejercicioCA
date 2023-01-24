@@ -14,4 +14,9 @@ public class CourseUseCase {
     public CourseDTO saveCourse(CourseDTO courseDTO){
         return courseDTO.fromDomain(iCourserepository.saveCourse(courseDTO.toDomain(courseDTO)));
     }
+
+    public CourseDTO findById(Long id){
+        CourseDTO courseDTO = new CourseDTO().fromDomain(iCourserepository.findById(id));
+        return courseDTO;
+    }
 }

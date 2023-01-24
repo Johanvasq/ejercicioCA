@@ -13,6 +13,8 @@ public class StudentDTO {
     private Integer phone;
     private String mail;
 
+    private Long courseId;
+
     public StudentDTO(Long id, String name, Integer phone, String mail) {
         this.id = id;
         this.name = name;
@@ -50,6 +52,14 @@ public class StudentDTO {
 
     public void setMail(String mail) {
         this.mail = mail;
+    }
+
+    public Long getCourseId() {
+        return courseId;
+    }
+
+    public void setCourseId(Long courseId) {
+        this.courseId = courseId;
     }
 
     public Student toDomain(StudentDTO studentDTO){

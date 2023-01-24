@@ -6,4 +6,6 @@ public interface ICourseRepository {
 
 
     Course saveCourse(Course course);
+
+    Course findById(Long id);
 }
