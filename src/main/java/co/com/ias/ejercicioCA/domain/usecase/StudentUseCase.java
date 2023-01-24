@@ -13,8 +13,8 @@ public class StudentUseCase {
     }
 
     public StudentDTO saveStudent(StudentDTO studentDTO) {
-        Student student = studentDTO.studentDTOToDomain(studentDTO);
+        Student student = studentDTO.toDomain(studentDTO);
 
-        return studentDTO.valueObjectToDTO(iStudentRepository.saveStudent(student));
+        return studentDTO.fromDomain(iStudentRepository.saveStudent(student));
     }
 }

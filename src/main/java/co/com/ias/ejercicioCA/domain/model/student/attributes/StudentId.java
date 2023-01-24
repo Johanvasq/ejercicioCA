@@ -1,4 +1,4 @@
-package co.com.ias.ejercicioCA.domain.model.student;
+package co.com.ias.ejercicioCA.domain.model.student.attributes;
 
 public class StudentId {
 

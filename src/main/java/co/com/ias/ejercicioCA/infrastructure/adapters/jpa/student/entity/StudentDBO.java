@@ -1,6 +1,10 @@
-package co.com.ias.ejercicioCA.infrastructure.adapters.jpa.entity;
+package co.com.ias.ejercicioCA.infrastructure.adapters.jpa.student.entity;
 
 import co.com.ias.ejercicioCA.domain.model.student.*;
+import co.com.ias.ejercicioCA.domain.model.student.attributes.StudentId;
+import co.com.ias.ejercicioCA.domain.model.student.attributes.StudentMail;
+import co.com.ias.ejercicioCA.domain.model.student.attributes.StudentName;
+import co.com.ias.ejercicioCA.domain.model.student.attributes.StudentPhone;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,7 +26,7 @@ public class StudentDBO {
     private Integer phone;
     private String mail;
 
-    public static StudentDBO studentDBOfromDomain (Student student) {
+    public StudentDBO fromDomain (Student student) {
         return new StudentDBO(
                 student.getId().getValue(),
                 student.getName().getValue(),
@@ -31,7 +35,7 @@ public class StudentDBO {
         );
     }
 
-    public Student studentDBOtoDomain (StudentDBO studentDBO) {
+    public Student toDomain (StudentDBO studentDBO) {
         return new Student(
                 new StudentId(studentDBO.getId()),
                 new StudentName(studentDBO.getName()),

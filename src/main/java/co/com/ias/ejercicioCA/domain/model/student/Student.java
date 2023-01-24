@@ -1,5 +1,10 @@
 package co.com.ias.ejercicioCA.domain.model.student;
 
+import co.com.ias.ejercicioCA.domain.model.student.attributes.StudentId;
+import co.com.ias.ejercicioCA.domain.model.student.attributes.StudentMail;
+import co.com.ias.ejercicioCA.domain.model.student.attributes.StudentName;
+import co.com.ias.ejercicioCA.domain.model.student.attributes.StudentPhone;
+
 public class Student {
 
     private final StudentId id;

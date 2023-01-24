@@ -1,10 +1,10 @@
-package co.com.ias.ejercicioCA.domain.model.student;
+package co.com.ias.ejercicioCA.domain.model.student.attributes;
 
-public class StudentName {
+public class StudentMail {
 
     private final String value;
 
-    public StudentName(String value) {
+    public StudentMail(String value) {
         this.value = value;
     }
 

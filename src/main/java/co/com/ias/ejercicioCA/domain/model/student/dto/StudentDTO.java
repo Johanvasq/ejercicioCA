@@ -1,6 +1,10 @@
 package co.com.ias.ejercicioCA.domain.model.student.dto;
 
 import co.com.ias.ejercicioCA.domain.model.student.*;
+import co.com.ias.ejercicioCA.domain.model.student.attributes.StudentId;
+import co.com.ias.ejercicioCA.domain.model.student.attributes.StudentMail;
+import co.com.ias.ejercicioCA.domain.model.student.attributes.StudentName;
+import co.com.ias.ejercicioCA.domain.model.student.attributes.StudentPhone;
 
 public class StudentDTO {
 
@@ -48,7 +52,7 @@ public class StudentDTO {
         this.mail = mail;
     }
 
-    public Student studentDTOToDomain(StudentDTO studentDTO){
+    public Student toDomain(StudentDTO studentDTO){
         return new Student(
                 new StudentId(studentDTO.getId()),
                 new StudentName(studentDTO.getName()),
@@ -57,7 +61,7 @@ public class StudentDTO {
         );
     }
 
-    public StudentDTO valueObjectToDTO(Student student){
+    public StudentDTO fromDomain(Student student){
         return  new StudentDTO(
                 student.getId().getValue(),
                 student.getName().getValue(),
